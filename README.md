@@ -22,7 +22,7 @@ PaginationHelper API method details
       Returns: total number of items
 
     public int pageItemCount(int pageIndex)
-       Parameters: pageIndex page index
+      Parameters: pageIndex page index
       Returns: number of items on the page
 
     public int pageIndex(int itemIndex)
@@ -34,9 +34,9 @@ PaginationHelper API method details
       Returns: Object[] an array of items that the page contains
       Throws: java.lang.IllegalArgumentException - thrown when provided page index is out of range
 
-<h4>Initial requirements</h4>
+<h4>Initial requirements / usage examples</h4>
 - The types of values contained within the collection/array are not
-  relevant.
+  relevant.<br />
 - The following are some examples of how this class is used: <br /><br />
 
   PaginationHelper helper = new PaginationHelper(new Object[]{'a','b','c','d','e','f'}, 4);
@@ -47,12 +47,13 @@ PaginationHelper API method details
   helper.pageItemCount(0) # should == 4 <br />
   helper.pageItemCount(1) # last page - should == 2 <br />
   helper.pageItemCount(2) # should == -1 since the page is invalid <br />
+  <br />
   helper.pageIndex(5) # should == 1 (zero based index) <br />
   helper.pageIndex(2) # should == 0 <br />
   helper.pageIndex(20) # should == -1 <br />
   helper.pageIndex(-10) # should == -1 because negative indexes are invalid <br />
 
-<h4> Added requirements </h4>
+<h4> Added requirements / usage examples</h4>
 
 Constructor arguments validation requirements: <br />
 An exception is thrown when an empty array of items is passed to the helper class;<br />
@@ -63,6 +64,6 @@ A method to return all items for a specified by index page:  <br /><br />
 Object[] getItemsForPageIndex(int pageIndex) <br />
 
 Usage Example: <br />
-helper.getItemsForPageIndex(1);  => should return an array for objects containing elements for the page of given index <br />
-e.g. Arrays.toString(helper.getItemsForPageIndex(1)) => [e, f] <br />
-<br />
+    helper.getItemsForPageIndex(1);  => should return an array for objects containing elements for the page of given index <br />
+    Arrays.toString(helper.getItemsForPageIndex(1)) => [e, f] <br />
+
