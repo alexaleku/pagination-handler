@@ -41,6 +41,10 @@ public class PaginationHelper {
         return values.length;
     }
 
+    /**
+     * @param pageIndex page index
+     * @return number of items on the page
+     */
     public int pageItemCount(int pageIndex) {
         if (pageIndex < 0 || pageIndex > lastPageIndex()) {
             return -1;
